@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tenon.replit.app/sitemap.xml

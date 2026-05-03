@@ -1,0 +1,6 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F5F1E8" />
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="#FFFFFF" stroke="#D8D0C1" />
+  <image href="/favicon.png" x="400" y="115" width="400" height="400" preserveAspectRatio="xMidYMid meet" />
+  <text x="600" y="545" text-anchor="middle" fill="#4A4338" font-family="Inter, Arial, sans-serif" font-size="34" letter-spacing="8">TENON</text>
+</svg>
