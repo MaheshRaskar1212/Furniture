@@ -25,6 +25,46 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const menu = document.getElementById("mobile-menu");
+    const toggleBtn = document.getElementById("mobile-menu-toggle");
+    if (!menu || !toggleBtn) return;
+
+    const focusableElements = menu.querySelectorAll<HTMLElement>(
+      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+    );
+    const elements = [toggleBtn, ...Array.from(focusableElements)];
+    const firstElement = elements[0];
+    const lastElement = elements[elements.length - 1];
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+        toggleBtn.focus();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -64,31 +104,39 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
+          id="mobile-menu-toggle"
           className="md:hidden text-foreground p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border py-4 px-6 flex flex-col gap-6 shadow-xl">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <a 
-                className={`text-sm uppercase tracking-widest font-medium ${
-                  location === link.href ? "text-accent" : "text-foreground/90"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            </Link>
-          ))}
-        </div>
-      )}
+      <div 
+        id="mobile-menu"
+        className={`md:hidden absolute top-full left-0 w-full border-b border-border py-4 px-6 flex flex-col gap-6 shadow-xl transition-all duration-300 motion-reduce:transition-none ${
+          mobileMenuOpen 
+            ? "bg-black/90 backdrop-blur-md opacity-100 visible" 
+            : "bg-transparent opacity-0 invisible pointer-events-none"
+        } md:bg-transparent`}
+      >
+        {navLinks.map((link) => (
+          <Link key={link.href} href={link.href}>
+            <a 
+              className={`text-sm uppercase tracking-widest font-medium ${
+                location === link.href ? "text-accent" : "text-foreground/90"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          </Link>
+        ))}
+      </div>
     </header>
   );
 }
