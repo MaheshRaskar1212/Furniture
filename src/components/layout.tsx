@@ -75,8 +75,18 @@ export function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border/50 py-3" : "bg-black/95 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        isScrolled ? "py-3" : "py-5"
+      } ${
+        mobileMenuOpen 
+          ? `bg-black/90 backdrop-blur-md border-transparent ${
+              isScrolled 
+                ? "md:bg-background/95 md:backdrop-blur-sm md:border-border/50" 
+                : "md:bg-transparent md:backdrop-blur-none md:border-transparent"
+            }`
+          : isScrolled
+            ? "bg-background/95 backdrop-blur-sm border-border/50"
+            : "bg-transparent backdrop-blur-none border-transparent"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
