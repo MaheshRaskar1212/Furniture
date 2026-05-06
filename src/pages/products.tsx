@@ -21,16 +21,16 @@ export default function Products() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden">
+      <section className="relative min-h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={productsHero}
             alt="Tenon collection"
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            className="absolute inset-0 w-full h-full object-cover bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background"></div>
         </div>
-        <div className="relative z-10 h-full container mx-auto px-6 md:px-12 flex flex-col justify-end pb-20 md:pb-28">
+        <div className="relative z-10 min-h-screen container mx-auto px-6 md:px-12 flex flex-col justify-start pt-36 md:pt-44">
           <motion.span
             initial="hidden"
             animate="visible"
@@ -58,27 +58,6 @@ export default function Products() {
             A considered catalogue of furniture — manufactured in our Wakad
             workshop. Every piece can be tailored to your space.
           </motion.p>
-        </div>
-      </section>
-
-      {/* Index strip */}
-      <section className="border-y border-border bg-secondary/20">
-        <div className="container mx-auto px-6 md:px-12 py-8 md:py-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-          <a
-            href="#furniture"
-            className="inline-flex items-center justify-center px-6 py-2 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] text-white border border-[rgb(255,204,0)] border-[1.5px] bg-transparent rounded-none transition-all duration-300 ease-in-out hover:bg-[rgb(255,204,0)] hover:text-black hover:scale-105 hover:shadow-[0_16px_40px_-24px_rgba(255,204,0,0.95)] hover:rounded-none"
-          >
-            Furniture
-          </a>
-          <span className="text-foreground/50 mx-4 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] opacity-70">
-            /
-          </span>
-          <a
-            href="#bespoke"
-            className="inline-flex items-center justify-center px-6 py-2 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] text-white border border-[rgb(255,204,0)] border-[1.5px] bg-transparent rounded-none transition-all duration-300 ease-in-out hover:bg-[rgb(255,204,0)] hover:text-black hover:scale-105 hover:shadow-[0_16px_40px_-24px_rgba(255,204,0,0.95)] hover:rounded-none"
-          >
-            Bespoke
-          </a>
         </div>
       </section>
 
