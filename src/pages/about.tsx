@@ -51,6 +51,7 @@ export default function About() {
             className="mb-16 md:mb-24"
           >
             <h1 className="text-4xl md:text-6xl font-serif text-foreground tracking-wide">About Tenon.</h1>
+            <p className="text-lg md:text-xl font-semibold text-accent mt-4 italic">Since 2001, TENON has built a legacy of excellence in furniture design and manufacturing.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
@@ -62,7 +63,13 @@ export default function About() {
                 Tenon was born from a passion for craftsmanship and the belief that great furniture is more than function — it is an expression of the people who live with it.
               </p>
               <p>
-                Based in Wakad, Pimpri-Chinchwad, we manufacture premium furniture, bringing refined interiors to homes and commercial spaces across Pune and beyond.
+                Based in Wakad, Pimpri-Chinchwad, we manufacture premium furniture, bringing refined interiors to homes and commercial spaces across Pune and beyond. We specialize in crafting high-quality, durable furniture for modern living spaces, combining functionality with aesthetic appeal to suit every home.
+              </p>
+              <p>
+                We use premium materials to ensure long-lasting performance and comfort, focusing on detail, precision, and customer satisfaction. Our team offers customized furniture solutions based on client needs, blending traditional craftsmanship with modern technology to create pieces that enhance both comfort and usability.
+              </p>
+              <p>
+                We pay close attention to finishing, texture, and durability, ensuring our furniture reflects elegance, strength, and timeless design. From concept to creation, we guarantee excellence at every step, delivering value through quality and design while continuously innovating to match the latest interior design trends.
               </p>
               <p>
                 With a 4.3-star Google rating and a growing community of satisfied clients, Tenon stands for quality you can feel.
@@ -74,7 +81,7 @@ export default function About() {
                 hidden: { opacity: 0, scale: 0.95 },
                 visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }
               }}
-              className="aspect-[4/5] relative overflow-hidden bg-secondary/20"
+              className="aspect-square relative overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mx-auto max-w-md"
             >
               <img 
                 src={aboutImg} 

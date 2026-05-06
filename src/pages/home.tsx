@@ -42,7 +42,7 @@ export default function Home() {
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-foreground mb-8 md:mb-10 lg:mb-12 max-w-4xl mx-auto leading-snug md:leading-tight lg:leading-tight tracking-tight"
           >
-            {["Handcrafted", "in", "Our", "Wakad", "Workshop,"].map((word, i) => (
+            {["Handcrafted", "in", "Our", "Workshop,"].map((word, i) => (
               <motion.span
                 key={i}
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
@@ -67,13 +67,14 @@ export default function Home() {
             initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.2 }}
             className="text-sm md:text-base tracking-widest uppercase text-muted-foreground mb-12 max-w-2xl mx-auto font-medium"
           >
-            Premium Furniture Manufacturer — Wakad, Pune
+            Premium Furniture Manufacturer
           </motion.p>
           
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.4 }}>
             <Link href="/about">
-              <a className="inline-flex items-center justify-center px-8 py-4 bg-accent text-accent-foreground text-sm tracking-widest uppercase font-semibold transition-all hover:bg-accent/90 hover:scale-105 duration-300">
-                Explore Our Work
+              <a className="explore-work-btn inline-flex items-center justify-center px-10 py-4 bg-[rgb(255,204,0)] text-black text-sm tracking-widest uppercase font-bold shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden group">
+                <span className="relative z-10">Explore Our Work</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(255,204,0,0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </Link>
           </motion.div>

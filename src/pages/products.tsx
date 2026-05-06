@@ -26,9 +26,9 @@ export default function Products() {
           <img
             src={productsHero}
             alt="Tenon collection"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-background/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background"></div>
         </div>
         <div className="relative z-10 h-full container mx-auto px-6 md:px-12 flex flex-col justify-end pb-20 md:pb-28">
           <motion.span
@@ -63,12 +63,20 @@ export default function Products() {
 
       {/* Index strip */}
       <section className="border-y border-border bg-secondary/20">
-        <div className="container mx-auto px-6 md:px-12 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs uppercase tracking-[0.3em] text-foreground/70">
-          <a href="#furniture" className="hover:text-accent transition-colors">
+        <div className="container mx-auto px-6 md:px-12 py-8 md:py-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          <a
+            href="#furniture"
+            className="inline-flex items-center justify-center px-6 py-2 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] text-white border border-[rgb(255,204,0)] border-[1.5px] bg-transparent rounded-none transition-all duration-300 ease-in-out hover:bg-[rgb(255,204,0)] hover:text-black hover:scale-105 hover:shadow-[0_16px_40px_-24px_rgba(255,204,0,0.95)] hover:rounded-none"
+          >
             Furniture
           </a>
-          <span className="text-border">/</span>
-          <a href="#bespoke" className="hover:text-accent transition-colors">
+          <span className="text-foreground/50 mx-4 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] opacity-70">
+            /
+          </span>
+          <a
+            href="#bespoke"
+            className="inline-flex items-center justify-center px-6 py-2 text-lg md:text-xl font-semibold uppercase tracking-[0.35em] text-white border border-[rgb(255,204,0)] border-[1.5px] bg-transparent rounded-none transition-all duration-300 ease-in-out hover:bg-[rgb(255,204,0)] hover:text-black hover:scale-105 hover:shadow-[0_16px_40px_-24px_rgba(255,204,0,0.95)] hover:rounded-none"
+          >
             Bespoke
           </a>
         </div>
@@ -131,8 +139,9 @@ export default function Products() {
             </p>
 
             <Link href="/contact">
-              <a className="mt-12 inline-block bg-accent text-background px-10 py-4 text-xs font-semibold uppercase tracking-[0.3em] hover:bg-accent/90 transition-colors">
-                Start a Project
+              <a className="start-project-btn mt-12 inline-block bg-[rgb(255,204,0)] text-black px-10 py-4 text-xs font-bold uppercase tracking-[0.3em] shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden group">
+                <span className="relative z-10">Start a Project</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(255,204,0,0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </Link>
           </motion.div>
